@@ -3,7 +3,7 @@ import { Image, View, StyleSheet, TouchableOpacity } from "react-native";
 import { Button } from "react-native-elements";
 import * as ImagePicker from "expo-image-picker";
 import * as Permissions from "expo-permissions";
-import ZoomableImage from "../components/PhotoRecords/ZoomableImage";
+
 import { FontAwesome } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 
@@ -14,16 +14,11 @@ const cameraIcon = (
 
 const getPermissionAsync = async () => {
   const { status, permissions } = await Permissions.askAsync(
-    Permissions.CAMERA_ROLL,
     Permissions.CAMERA
   );
 
   if (!permissions.camera) {
-    alert("You must allow camere usage permissions in order to attach photo");
-  }
-
-  if (!permissions.cameraRoll) {
-    alert("You must allow camere roll permissions in order to save a photo");
+    alert("You must allow camera usage permissions in order to take photo");
   }
 };
 
@@ -37,19 +32,6 @@ const FormImagePicker = ({
     getPermissionAsync();
     console.log("hi");
   }, []);
-
-  const _pickImage = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      quality: 1
-    });
-
-    console.log(result);
-
-    if (!result.cancelled) {
-      setImage(result.uri);
-    }
-  };
   const _takePhoto = async () => {
     const result = await ImagePicker.launchCameraAsync({
       allowEditing: false,
@@ -74,15 +56,7 @@ const FormImagePicker = ({
 
       <View style={styles.btnContainer}>
         <Button
-          title="From Gallery"
-          titleStyle={styles.btnTitle}
-          buttonStyle={styles.btn}
-          icon={galleryIcon}
-          onPress={_pickImage}
-        />
-
-        <Button
-          title="Open Camera"
+          title="Take Photo"
           titleStyle={styles.btnTitle}
           buttonStyle={styles.btn}
           onPress={_takePhoto}
@@ -110,17 +84,18 @@ const styles = StyleSheet.create({
     alignSelf: "center"
   },
   btnContainer: {
-    borderWidth: 1,
-    borderColor: "gainsboro",
     flexDirection: "row",
-    alignContent: "center"
+    alignContent: "center",
+    justifyContent: "center"
   },
   btn: {
-    backgroundColor: "transparent"
+    backgroundColor: "transparent",
+    borderBottomWidth: 1,
+    borderBottomColor: "dodgerblue"
   },
   btnTitle: {
     color: "#111",
-    fontSize: 10,
+    fontSize: 15,
     padding: 10
   }
 });

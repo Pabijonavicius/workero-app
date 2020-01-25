@@ -1,15 +1,3 @@
-// import React from "react";
-// import { Text } from "native-base";
-
-// const AddAdditionalPhotoScrenn = () => {
-//   return <Text>AddAdditionalPhotoScrenn</Text>;
-// };
-
-// AddAdditionalPhotoScrenn.navigationOptions = {
-//   header: null
-// };
-
-// export default AddAdditionalPhotoScrenn;
 import React, { useState, useContext } from "react";
 import {
   Text,
