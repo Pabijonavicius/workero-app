@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "679602622285",
+    "firebase_url": "https://workero.firebaseio.com",
+    "project_id": "workero",
+    "storage_bucket": "workero.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679602622285:android:a7c30fa43f430cb30f3104",
+        "android_client_info": {
+          "package_name": "com.workero.apper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "679602622285-8fcg7rl15j3jbeu69k8om7a45sku8dfi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2ev9WIC-3MmSoxCFAwSxDSCobmmQAXC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "679602622285-8fcg7rl15j3jbeu69k8om7a45sku8dfi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
